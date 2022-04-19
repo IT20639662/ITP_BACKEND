@@ -11,7 +11,7 @@ const app = express();
 //const timeSchedulingRoutes = require('./routes/timeSchedulings');
 //const materialRoutes = require('./routes/materials');
 //const crewRoutes = require('./routes/crews');
-//const salaryRoutes = require('./routes/salaries');
+const salaryRoutes = require('./routes/salaries');
 //const architectRoutes = require('./routes/architects');
 
 
@@ -25,7 +25,7 @@ app.use(cors());
 //app.use(timeSchedulingRoutes);
 //app.use(materialRoutes);
 //app.use(crewRoutes);
-//app.use(salaryRoutes);
+app.use(salaryRoutes);
 //app.use(architectRoutes);
 
 
