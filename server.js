@@ -7,7 +7,7 @@ const app = express();
 
 
 //import routes
-//const machineryRoutes = require('./routes/machineries');
+const machineryRoutes = require('./routes/machineries');
 //const timeSchedulingRoutes = require('./routes/timeSchedulings');
 const materialRoutes = require('./routes/materials');
 //const crewRoutes = require('./routes/crews');
@@ -21,7 +21,7 @@ app.use(cors());
 
 
 //route middleware
-//app.use(machineryRoutes);
+app.use(machineryRoutes);
 //app.use(timeSchedulingRoutes);
 app.use(materialRoutes);
 //app.use(crewRoutes);
