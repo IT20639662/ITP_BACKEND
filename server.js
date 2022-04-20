@@ -13,7 +13,10 @@ const app = express();
 //const crewRoutes = require('./routes/crews');
 //const salaryRoutes = require('./routes/salaries');
 //const architectRoutes = require('./routes/architects');
-
+const con_financeRoutes = require('./routes/con_finance');
+const i_o_financeRoutes = require('./routes/i_o_finance');
+const l_i_financeRoutes = require('./routes/l_i_finance');
+const l_i_monthlyRoutes = require('./routes/l_i_monthly');
 
 //app middleware
 app.use(bodyParser.json());
@@ -27,6 +30,10 @@ app.use(cors());
 //app.use(crewRoutes);
 //app.use(salaryRoutes);
 //app.use(architectRoutes);
+app.use(con_financeRoutes);
+app.use(i_o_financeRoutes);
+app.use(l_i_financeRoutes);
+app.use(l_i_monthlyRoutes);
 
 
 
