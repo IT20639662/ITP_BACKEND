@@ -12,7 +12,7 @@ const app = express();
 //const materialRoutes = require('./routes/materials');
 //const crewRoutes = require('./routes/crews');
 //const salaryRoutes = require('./routes/salaries');
-//const architectRoutes = require('./routes/architects');
+const planRoutes = require('./routes/plans');
 
 
 //app middleware
@@ -27,6 +27,7 @@ app.use(cors());
 //app.use(crewRoutes);
 //app.use(salaryRoutes);
 //app.use(architectRoutes);
+app.use(planRoutes);
 
 
 
