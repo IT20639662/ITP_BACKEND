@@ -6,7 +6,7 @@ const router = express.Router();
 
 //Save crew
 
-router.post('/salary/save',(req,res)=>{
+router.post('/save',(req,res)=>{
 
     const employeeID = req.body.employeeID;
     const employeeName = req.body.employeeName;
@@ -39,7 +39,7 @@ router.post('/salary/save',(req,res)=>{
 
 //Get salary details
 
-router.get('/salaries',(req,res)=>{
+router.get('/get',(req,res)=>{
 
     Salaries.find().exec((err, Salaries)=> {
         if(err) {
@@ -57,7 +57,7 @@ router.get('/salaries',(req,res)=>{
 
 //Get a Specific salary details
 
-router.get('/salaries/:id', (req,res) => {
+router.get('/get/:id', (req,res) => {
 
     let salaryId = req.params.id;
 
@@ -75,7 +75,7 @@ router.get('/salaries/:id', (req,res) => {
 
 //Update salary details
 
-router.put('/salary/update/:id', (req,res)=>{
+router.put('/update/:id', (req,res)=>{
 
     Salaries.findByIdAndUpdate(
         req.params.id, {
@@ -97,7 +97,7 @@ router.put('/salary/update/:id', (req,res)=>{
 
 //Delete salary details from the list
 
-router.delete('/salary/delete/:id', (req,res)=>{
+router.delete('/delete/:id', (req,res)=>{
 
     Salaries.findByIdAndRemove(req.params.id).exec((err, deletedSalary)=>{
         if (err) {

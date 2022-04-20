@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const machinerySchema = new mongoose.Schema({
+const crewSchema = new mongoose.Schema({
 
     contractID:{
         type:String,
@@ -25,4 +25,4 @@ const machinerySchema = new mongoose.Schema({
 
 });
 
-module.exports = mongoose.model('Machineries',machinerySchema);
+module.exports = mongoose.model('Crews',crewSchema);

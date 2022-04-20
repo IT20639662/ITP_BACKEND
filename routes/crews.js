@@ -7,28 +7,28 @@ const router = express.Router();
 
 //Save Machinery
 
-router.post('/machinery/save',(req,res)=>{
+router.post('/save',(req,res)=>{
 
-    let newMachinery = new Crews(req.body);
+    let newCrew = new Crews(req.body);
 
-    newMachinery.save((err)=>{
+    newCrew.save((err)=>{
         if(err){
             return res.status(400).json({
                 error:err
             });
         }
         return res.status(200).json({
-            success:"Machinery Save Successfully"
+            success:"Crew Save Successfully"
         });
     });
 });
 
 
-//Get Machinery's details
+//Get crew details
 
-router.get('/machineries',(req,res)=>{
+router.get('/getall',(req,res)=>{
 
-    Crews.find().exec((err, machineries)=> {
+    Crews.find().exec((err, crews)=> {
         if(err) {
             return res.status(400).json({
                 error:err
@@ -36,39 +36,39 @@ router.get('/machineries',(req,res)=>{
         }
         return res.status(200).json({
             success: true,
-            existingMechineries: machineries
+            existingcrews: crews
         });
     });
 });
 
 
-//Get a Specific Machinery
+//Get a Specific crew 
 
-router.get('/machinery/:id', (req,res) => {
+router.get('/get/:id', (req,res) => {
 
-    let machineryId = req.params.id;
+    let contractID = req.params.id;
 
-    Machineries.findById(machineryId,(err,machinery) =>{
+    Crews.findById(contractID,(err,crew) =>{
         if(err){
             return res.status(400).json({success:false, err});
         }
         return res.status(200).json({
             success:true,
-            machinery
+            crew
         });
     });
 });
 
 
-//Update Machinery's details
+//Update Crew's details
 
-router.put('/machinery/update/:id', (req,res)=>{
+router.put('/update/:id', (req,res)=>{
 
-    Machineries.findByIdAndUpdate(
+    Crews.findByIdAndUpdate(
         req.params.id, {
             $set: req.body
         },
-        (err, machineries) => {
+        (err, crews) => {
             if(err) {
                 return res.status(400).json({
                     error: err
@@ -82,11 +82,11 @@ router.put('/machinery/update/:id', (req,res)=>{
 });
 
 
-//Delete Machinery in the list
+//Delete Crew in the list
 
-router.delete('/machinery/delete/:id', (req,res)=>{
+router.delete('/delete/:id', (req,res)=>{
 
-    Machineries.findByIdAndRemove(req.params.id).exec((err, deletedMachinery)=>{
+    Crews.findByIdAndRemove(req.params.id).exec((err, deletedCrew)=>{
         if (err) {
             return res.status(400).json({
                 message: "Delete Unsuccessful.",
@@ -95,7 +95,7 @@ router.delete('/machinery/delete/:id', (req,res)=>{
         }
         return res.status(200).json({
             message: "Delete Successful.",
-            deletedMachinery
+            deletedCrew
         });
     });
 });
