@@ -25,7 +25,9 @@ app.use(cors());
 //app.use(timeSchedulingRoutes);
 //app.use(materialRoutes);
 //app.use(crewRoutes);
-app.use(salaryRoutes);
+// app.use(salaryRoutes);
+app.use("/crew",crewRoutes);
+app.use("/salary" ,salaryRoutes);
 //app.use(architectRoutes);
 
 
