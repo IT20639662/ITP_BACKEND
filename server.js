@@ -14,7 +14,7 @@ const app = express();
 //const salaryRoutes = require('./routes/salaries');
 //const architectRoutes = require('./routes/architects');
 const customerRoutes = require('./routes/customers');
-
+const feedbackRoutes = require('./routes/feedbacks');
 
 //app middleware
 app.use(bodyParser.json());
@@ -29,6 +29,7 @@ app.use(cors());
 //app.use(salaryRoutes);
 //app.use(architectRoutes);
 app.use(customerRoutes);
+app.use(feedbackRoutes);
 
 
 const PORT = 8000;
@@ -49,3 +50,4 @@ mongoose.connect(DB_URL,{
 app.listen(PORT, ()=>{
     console.log(`App is running on ${PORT}`);
 });
+
