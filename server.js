@@ -13,6 +13,7 @@ const app = express();
 //const crewRoutes = require('./routes/crews');
 //const salaryRoutes = require('./routes/salaries');
 //const architectRoutes = require('./routes/architects');
+const customerRoutes = require('./routes/customers');
 
 
 //app middleware
@@ -27,7 +28,7 @@ app.use(cors());
 //app.use(crewRoutes);
 //app.use(salaryRoutes);
 //app.use(architectRoutes);
-
+app.use(customerRoutes);
 
 
 const PORT = 8000;
